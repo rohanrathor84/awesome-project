@@ -62,9 +62,12 @@ export default function App() {
       <Modal
         visible={detailModal}
         onRequestClose={onRequestClose}
-        animationType={"slide"}
+        animationType={"none"}
       >
-        <View style={styles.modalContainerStyle}>
+        <Animatable.View
+          style={styles.modalContainerStyle}
+          animation={"zoomInRight"}
+        >
           <View style={styles.modalTopViewStyle}>
             <View style={styles.modalTopTextView}>
               <Text style={styles.modalTitleTextStyle}>{detailData.title}</Text>
@@ -151,7 +154,7 @@ export default function App() {
             useNativeDriver={true}
             style={styles.dividerStyle}
           />
-        </View>
+        </Animatable.View>
       </Modal>
     </SafeAreaView>
   );
